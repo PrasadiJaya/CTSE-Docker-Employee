@@ -3,8 +3,8 @@ kind: Deployment
 metadata:
   generation: 1
   labels:
-    app: inventory-app
-  name: inventory-app
+    app: employee-app
+  name: employee-app
   namespace: default
 spec:
   progressDeadlineSeconds: 600
@@ -12,7 +12,7 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: inventory-app
+      app: emplloyee-app
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -22,7 +22,7 @@ spec:
     metadata:
       creationTimestamp: "2022-05-16T12:54:57Z"
       labels:
-        app: inventory-app
+        app: employee-app
     spec:
       containers:
       - image: prasadijaya/employee-docker-image:{{tag}}
